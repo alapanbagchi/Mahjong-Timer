@@ -45,7 +45,7 @@
 		/>
 	</div>
 
-	<button  class="cta"><a href="/game">Start the game</a></button>
+	<button  class="cta"><a data-sveltekit-prefetch href="/game">Start the game</a></button>
 </section>
 
 <style>
