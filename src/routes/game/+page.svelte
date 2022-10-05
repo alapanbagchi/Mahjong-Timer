@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { current, gameTime, time } from '../../stores/time';
 	type Player = 'east' | 'north' | 'south' | 'west';
 	const intervals = {
@@ -9,7 +10,13 @@
 	};
 	let playersWhoHaveLost = 0;
 	const playerOrder = ['east', 'north', 'west', 'south'];
-
+    onMount(()=>{
+        //If gametime is -1 then the game has not started yet
+        if ($gameTime.standard === -1) {
+            //Redirect to the home page
+            window.location.href = '/';
+        }
+    })
 	let gameStarted = false;
 
 	const decrementTime = () => {
@@ -99,11 +106,11 @@
 			<p class="japanese">北 (North)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard Time</p>
+					<p class="time_title">Standard</p>
 					<p class="time">{$time.north.standard}</p>
 				</div>
 				<div class="bank">
-					<p class="time_title">Bank Time</p>
+					<p class="time_title">Reserved</p>
 					<p class="time">{$time.north.bonus}</p>
 				</div>
 			</div>
@@ -114,11 +121,11 @@
 			<p class="japanese">南 (South)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard Time</p>
+					<p class="time_title">Standard</p>
 					<p class="time">{$time.south.standard}</p>
 				</div>
 				<div class="bank">
-					<p class="time_title">Bank Time</p>
+					<p class="time_title">Reserved</p>
 					<p class="time">{$time.south.bonus}</p>
 				</div>
 			</div>
@@ -129,11 +136,11 @@
 			<p class="japanese">東 (East)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard Time</p>
+					<p class="time_title">Standard</p>
 					<p class="time">{$time.east.standard}</p>
 				</div>
 				<div class="bank">
-					<p class="time_title">Bank Time</p>
+					<p class="time_title">Reserved</p>
 					<p class="time">{$time.east.bonus}</p>
 				</div>
 			</div>
@@ -144,11 +151,11 @@
 			<p class="japanese">西 (West)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard Time</p>
+					<p class="time_title">Standard</p>
 					<p class="time">{$time.west.standard}</p>
 				</div>
 				<div class="bank">
-					<p class="time_title">Bank Time</p>
+					<p class="time_title">Reserve</p>
 					<p class="time">{$time.west.bonus}</p>
 				</div>
 			</div>
@@ -258,7 +265,7 @@
 		}
 		.time {
 			font-size: 2rem;
-			gap: 10px;
+			gap: 20px;
 		}
 		.north {
 			top: 80px;
@@ -267,11 +274,11 @@
 			bottom: 80px;
 		}
 		.east {
-			right: -60px;
+			right: -0;
 			transform: rotate(-90deg);
 		}
 		.west {
-			left: -60px;
+			left: -0;
 			transform: rotate(90deg);
 		}
 	}

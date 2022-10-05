@@ -1,27 +1,27 @@
 <script lang="ts">
 	import Input from '$lib/Input.svelte';
-	import {gameTime, time } from '../stores/time';
+	import { gameTime, time } from '../stores/time';
 	//Get the value of the input field
 	const onChange = (e: any) => {
-        //If the value is not a number and if it is a number less than 0 strip the last character
-        if (isNaN(e.target.value) || e.target.value < 0) {
-            e.target.value = e.target.value.slice(0, -1);
-            return
-        }
-        if (e.target.name === 'standard') {
-            $time.north.standard = e.target.value
-            $time.south.standard = e.target.value
-            $time.east.standard = e.target.value
-            $time.west.standard = e.target.value
-            $gameTime.standard = e.target.value
-        } else {
-            $time.north.bonus = e.target.value
-            $time.south.bonus = e.target.value
-            $time.east.bonus = e.target.value
-            $time.west.bonus = e.target.value
-            $gameTime.bonus = e.target.value
-        }
-    };
+		//If the value is not a number and if it is a number less than 0 strip the last character
+		if (isNaN(e.target.value) || e.target.value < 0) {
+			e.target.value = e.target.value.slice(0, -1);
+			return;
+		}
+		if (e.target.name === 'standard') {
+			$time.north.standard = e.target.value;
+			$time.south.standard = e.target.value;
+			$time.east.standard = e.target.value;
+			$time.west.standard = e.target.value;
+			$gameTime.standard = e.target.value;
+		} else {
+			$time.north.bonus = e.target.value;
+			$time.south.bonus = e.target.value;
+			$time.east.bonus = e.target.value;
+			$time.west.bonus = e.target.value;
+			$gameTime.bonus = e.target.value;
+		}
+	};
 </script>
 
 <section>
@@ -44,10 +44,15 @@
 			label="Reserved Time"
 		/>
 	</div>
-	<a href="/game" class="cta">Start the game</a>
+
+	<button  class="cta"><a href="/game">Start the game</a></button>
 </section>
 
 <style>
+    a{
+        text-decoration: none;
+        color: white;
+    }
 	section {
 		max-width: 1200px;
 		margin: 0 auto;
@@ -64,6 +69,7 @@
 		gap: 50px;
 	}
 	.cta {
+		text-decoration: none;
 		width: 100%;
 		padding: 10px;
 		border: none;
@@ -84,5 +90,11 @@
 	.cta:active {
 		scale: 0.98;
 		transition: all 0.2s ease-in-out;
+	}
+	@media (max-width: 768px) {
+		.inputs {
+            gap: 15px;
+			flex-direction: column;
+		}
 	}
 </style>

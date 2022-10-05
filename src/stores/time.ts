@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 export const gameTime = writable({
-    standard: 2,
-    bonus: 2
+    standard: -1,
+    bonus: -1
 });
 
 
