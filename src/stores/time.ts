@@ -1,25 +1,28 @@
 import { writable } from 'svelte/store';
+export const gameTime = writable({
+    standard: 2,
+    bonus: 2
+});
 
-export const standardTime = 1
-export const bonusTime = 1
 
 export const current = writable('east');
+
 export const time = writable({
     east: {
-        standard: standardTime,
-        bonus: bonusTime
+        standard: 2,
+        bonus: 1
     },
     north: {
-        standard: standardTime,
-        bonus: bonusTime
+        standard: 2,
+        bonus: 1
     },
     west: {
-        standard: standardTime,
-        bonus: bonusTime
+        standard: 2,
+        bonus: 1
     },
     south: {
-        standard: standardTime,
-        bonus: bonusTime
+        standard: 2,
+        bonus: 1
     }
 });
 

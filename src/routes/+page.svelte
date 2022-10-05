@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Input from '$lib/Input.svelte';
-	import { bonusTime, standardTime } from '../stores/time';
+	import {gameTime, time } from '../stores/time';
 	//Get the value of the input field
 	const onChange = (e: any) => {
         //If the value is not a number and if it is a number less than 0 strip the last character
@@ -9,12 +9,19 @@
             return
         }
         if (e.target.name === 'standard') {
-            $standardTime = parseInt(e.target.value);
+            $time.north.standard = e.target.value
+            $time.south.standard = e.target.value
+            $time.east.standard = e.target.value
+            $time.west.standard = e.target.value
+            $gameTime.standard = e.target.value
         } else {
-            $bonusTime = parseInt(e.target.value);
+            $time.north.bonus = e.target.value
+            $time.south.bonus = e.target.value
+            $time.east.bonus = e.target.value
+            $time.west.bonus = e.target.value
+            $gameTime.bonus = e.target.value
         }
     };
-    $: console.log($standardTime, $bonusTime);
 </script>
 
 <section>
@@ -37,7 +44,7 @@
 			label="Reserved Time"
 		/>
 	</div>
-	<button>Start the game</button>
+	<a href="/game" class="cta">Start the game</a>
 </section>
 
 <style>
@@ -56,7 +63,7 @@
 		margin-top: 25px;
 		gap: 50px;
 	}
-	button {
+	.cta {
 		width: 100%;
 		padding: 10px;
 		border: none;
@@ -70,11 +77,11 @@
 		transform: translateY(0);
 		transition: all 0.2s ease-in-out;
 	}
-	button:hover {
+	.cta:hover {
 		transform: translateY(-1px);
 		transition: all 0.2s ease-in-out;
 	}
-	button:active {
+	.cta:active {
 		scale: 0.98;
 		transition: all 0.2s ease-in-out;
 	}
