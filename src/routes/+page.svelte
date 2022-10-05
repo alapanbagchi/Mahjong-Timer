@@ -44,22 +44,25 @@
 			label="Reserved Time"
 		/>
 	</div>
-
-	<button  class="cta"><a data-sveltekit-prefetch href="/game">Start the game</a></button>
+	<a  data-sveltekit-prefetch href="/game">
+        <div class="cta">
+            Start the game
+        </div>
+    </a>
 </section>
 
 <style>
     a{
         text-decoration: none;
-        color: white;
     }
 	section {
 		max-width: 1200px;
 		margin: 0 auto;
+        height: 100vh;
+		padding-top: 50px;
 	}
 	.pagetitle {
 		text-align: center;
-		margin-top: 50px;
 		font-size: 1.5rem;
 	}
 	.inputs {
@@ -70,6 +73,7 @@
 	}
 	.cta {
 		text-decoration: none;
+        text-align: center;
 		width: 100%;
 		padding: 10px;
 		border: none;
@@ -93,7 +97,7 @@
 	}
 	@media (max-width: 768px) {
 		.inputs {
-            gap: 15px;
+			gap: 15px;
 			flex-direction: column;
 		}
 	}
