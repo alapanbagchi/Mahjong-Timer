@@ -106,11 +106,11 @@
 			<p class="japanese">北 (North)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard</p>
+					<p class="time_title">Time</p>
 					<p class="time">{$time.north.standard}</p>
 				</div>
 				<div class="bank">
-					<p class="time_title">Reserved</p>
+					<p class="time_title">Reserve</p>
 					<p class="time">{$time.north.bonus}</p>
 				</div>
 			</div>
@@ -121,11 +121,11 @@
 			<p class="japanese">南 (South)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard</p>
+					<p class="time_title">Time</p>
 					<p class="time">{$time.south.standard}</p>
 				</div>
 				<div class="bank">
-					<p class="time_title">Reserved</p>
+					<p class="time_title">Reserve</p>
 					<p class="time">{$time.south.bonus}</p>
 				</div>
 			</div>
@@ -136,11 +136,11 @@
 			<p class="japanese">東 (East)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard</p>
+					<p class="time_title">Time</p>
 					<p class="time">{$time.east.standard}</p>
 				</div>
 				<div class="bank">
-					<p class="time_title">Reserved</p>
+					<p class="time_title">Reserve</p>
 					<p class="time">{$time.east.bonus}</p>
 				</div>
 			</div>
@@ -151,7 +151,7 @@
 			<p class="japanese">西 (West)</p>
 			<div class="time">
 				<div class="standard">
-					<p class="time_title">Standard</p>
+					<p class="time_title">Time</p>
 					<p class="time">{$time.west.standard}</p>
 				</div>
 				<div class="bank">
